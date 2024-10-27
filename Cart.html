@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BEAN BOUTIQUE COFFEE SHOP</title>
+    <!-- style CSS link -->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="shop.css" />
+    <!-- FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="header">
+      <a href="#"><img src="./images/logo.png" class="logo"></a>
+      <div >             
+          <ul id="navbar" class="transparent ">
+              <li><a href="index.html">Home</a></li>
+            <li><a href="coffee-selection.html">Coffee Selection</a></li>
+            <li><a href="brewing-equipment.html">Brewing Equipment</a></li>
+            <li><a href="events-workshop.html">Events & Workshop</a></li>
+            <li><a href="special-offer.html">Special Offer & More</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+            <li><a href="Cart.html">Cart</a></li>
+            <i class="fas fa-search search-icon" ></i>
+             <a href="signin.html" class="signin">
+              <i class="fa-regular fa-user search-icon signin"></i>
+            </a>
+              <a href="#" id="close"><i class="fa-solid fa-x"></i></a>
+          </ul>
+      </div>
+      <div  id="mobile">
+        <a href="signin.html" class="signin">
+          <i class="fa-regular fa-user search-icon signin"></i>
+        </a>
+              <i id="bar" class="fa-solid fa-bars"></i>
+          </div>
+      </div>
+    </section>
+    </nav>
+
+    <!-- --------------------------------- -->
+    <div id="cart-container">
+        <table id="cart-table" border="1">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="cart-items">
+            <!-- Cart items will be dynamically injected here -->
+          </tbody>
+        </table>
+      
+        <!-- Subtotal and Total Section -->
+        <div id="totals">
+          <p><strong>Subtotal:</strong> ₹<span id="subtotal">0.00</span></p>
+          <p><strong>Total:</strong> ₹<span id="total">0.00</span></p>
+          <button  class="Remove-btn" onclick="checkout()" id="checkout-button">Checkout</button>
+        </div>
+      
+        <!-- Checkout Button -->
+        
+      </div>
+      
+      <script>
+        function loadCart() {
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const cartContainer = document.getElementById("cart-items");
+          let subtotal = 0;
+      
+          if (cart.length === 0) {
+            cartContainer.innerHTML = "<tr><td colspan='4'>Your cart is empty.</td></tr>";
+            document.getElementById("subtotal").textContent = "0.00";
+            document.getElementById("total").textContent = "0.00";
+            return;
+          }
+      
+          // Generate table rows for each cart item
+          cartContainer.innerHTML = cart.map((item, index) => {
+            const itemTotal = item.price * item.quantity;
+            subtotal += itemTotal; // Add each item's total to subtotal
+      
+            return `
+              <tr>
+                <td>${item.name}</td>
+                <td>₹${item.price.toFixed(2)}</td>
+                <td>${item.quantity}</td>
+                <td><button class="Remove-btn" onclick="removeFromCart(${index})">Remove</button></td>
+              </tr>
+            `;
+          }).join("");
+      
+          // Calculate total and update the displayed totals
+          const total = subtotal; // You can add additional calculations if needed
+          document.getElementById("subtotal").textContent = subtotal.toFixed(2);
+          document.getElementById("total").textContent = total.toFixed(2);
+        }
+      
+        function removeFromCart(index) {
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+          cart.splice(index, 1); // Remove item at the specified index
+          localStorage.setItem("cart", JSON.stringify(cart));
+          loadCart(); // Reload the cart items
+        }
+      
+        function checkout() {
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+          if (cart.length === 0) {
+            alert("Your cart is empty!");
+            return;
+          }
+      
+          // Simulate checkout process
+          alert("Thank you for your purchase!");
+          localStorage.removeItem("cart"); // Clear cart after checkout
+          loadCart(); // Reload cart to reflect empty state
+        }
+      
+        // Load cart on page load
+        window.onload = loadCart;
+      </script>
+      
+      
+
+
+
+
+<section id="newsletter" class="section-p1 section-m1">
+    <div class="newstext">
+      <h4>Sign Up For Newsletters</h4>
+      <p>
+        Get E-mail Updates about Our latest Collections and
+        <span>Special Offers.</span>
+      </p>
+    </div>
+    <div class="form">
+      <input type="text" />
+      <button class="button1" class="signup-btn" id="signup-btn">
+        Sign Up
+      </button>
+    </div>
+  </section>
+  <footer class="section-p1">
+    <div class="col">
+      <img src="images/logo.png" alt="" class="b-logo" />
+      <h4>Contact</h4>
+      <p>
+        <strong>Address:</strong>507/B Renuka Nagar Kandivali West Mumbai-67
+      </p>
+      <p><strong>Phone:</strong>+91932122XXXX/022-8888-4444</p>
+      <p><strong>Hours:</strong>10:00 -18:00. Mon-Fri</p>
+      <div class="follow">
+        <h4>Follow us</h4>
+        <div class="logos">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-pinterest"></i>
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h4>About</h4>
+      <a href="#">About Us</a>
+      <a href="#">Delivery Information</a>
+      <a href="#">Private Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <div class="col">
+      <h4>My Accounts</h4>
+      <a href="#">Sign In</a>
+      <a href="#">View Cart</a>
+      <a href="#">My Wishlist</a>
+      <a href="#">Track My Order</a>
+      <a href="#">Help</a>
+    </div>
+
+    <div class="col install">
+      <h4>Install App</h4>
+      <p>From AppStore or GooglePlay</p>
+      <div class="row">
+        <button class="black">
+          <i class="fa-brands fa-apple"></i> Download
+        </button>
+        <button class="black">
+          <i class="fa-brands fa-google-play"></i> Download
+        </button>
+      </div>
+      <p>Secure Payment Gateways</p>
+      <div class="plogos">
+        <i class="fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-brands fa-cc-paypal"></i>
+        <i class="fa-brands fa-google-pay"></i>
+        <i class="fa-brands fa-cc-apple-pay"></i>
+        <i class="fa-brands fa-cc-stripe"></i>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>@Dev Gupta - HTML CSS Ecommerce Template</p>
+    </div>
+  </footer>
+    <script>
+      const bar = document.getElementById('bar');
+const nav = document.getElementById('navbar');
+const close = document.getElementById('close');
+const container = document.getElementById('content-box')
+
+if(bar) {
+    bar.addEventListener('click', () => {
+        nav.classList.add('active');
+        container.classList.add('z-index');
+    })
+}
+
+if(close) {
+    close.addEventListener('click', () => {
+        nav.classList.remove('active');
+        container.classList.remove('z-index');
+    })
+}
+
+
+    </script>
+<!-- <script src="script.js"></script> -->
+</body>
+</html>

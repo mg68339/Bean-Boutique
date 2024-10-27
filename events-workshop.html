@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BEAN BOUTIQUE COFFEE SHOP</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="C:/Users/suraj/Desktop/FE/Bean Boutique Coffee Shop logo (1).png"
+    />
+
+    <!-- style CSS link -->
+    <link rel="stylesheet" href="shop.css" />
+
+
+    <!-- FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section id="header">
+      <a href="#"><img src="./images/logo.png" class="logo"></a>
+      <div >             
+          <ul id="navbar" class="transparent ">
+              <li><a href="index.html">Home</a></li>
+            <li><a href="coffee-selection.html">Coffee Selection</a></li>
+            <li><a href="brewing-equipment.html">Brewing Equipment</a></li>
+            <li><a href="events-workshop.html">Events & Workshop</a></li>
+            <li><a href="special-offer.html">Special Offer & More</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+            <li><a href="Cart.html">Cart</a></li>
+            <i class="fas fa-search search-icon" ></i>
+             <a href="signin.html" class="signin">
+              <i class="fa-regular fa-user search-icon signin"></i>
+            </a>
+              <a href="#" id="close"><i class="fa-solid fa-x"></i></a>
+          </ul>
+      </div>
+      <div  id="mobile">
+        <a href="signin.html" class="signin">
+          <i class="fa-regular fa-user search-icon signin"></i>
+        </a>
+              <i id="bar" class="fa-solid fa-bars"></i>
+          </div>
+      </div>
+    </section>
+    <header>
+        <h1>Events & Workshops</h1>
+    </header>
+  
+<div class="parent-work-container">
+
+    <div class="work-container">
+        <div class="img-container">
+            <img src="images/coffee making_brewing workshop.png" alt="coffee making workshop">
+        </div>
+        <div class="txt">
+            <h2>Coffee Brewing Methods</h2>
+            <p>Learn various coffee brewing techniques, from pour-over to French press and more.</p>
+            <div class="details">
+                <h3>Every Monday, 2 PM</h3>
+                <h3>Free</h3>
+            </div>
+        </div>
+        <div class="reg-btn" onclick="register()">
+            <button>Register Now</button>
+        </div>
+    </div>
+
+
+    <div class="work-container">
+        <div class="img-container">
+            <img src="images/Latte Art Masterclass with a focus on the coffee.png" alt="cLatte Art Masterclass">
+        </div>
+        <div class="txt">
+            <h2>Latte Art Masterclass</h2>
+            <p>Learn various coffLearn to create beautiful designs in your lattes like a professional barista.</p>
+            <div class="details">
+                <h3>Every Friday, 3 PM</h3>
+                <h3>Free</h3>
+            </div>
+        </div>
+        <div class="reg-btn" onclick="register()">
+            <button>Register Now</button>
+        </div>
+    </div>
+
+
+    <div class="work-container">
+        <div class="img-container">
+            <img src="images/Coffee Bean Roasting.png" alt="Coffee Bean Roasting">
+        </div>
+        <div class="txt">
+            <h2>Coffee Bean Roasting</h2>
+            <p>Discover the art of roasting coffee beans and how it affects flavor profiles</p>
+            <div class="details">
+                <h3>Every Wednesday, 4 PM</h3>
+                <h3>Free</h3>
+            </div>
+        </div>
+        <div class="reg-btn" onclick="register()">
+            <button>Register Now</button>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="registerFormModal" class="form-modal">
+    <div class="form-content">
+      <span class="close-btn" onclick="closeForm()">×</span>
+      <h2>Register for Workshop</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+  
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+  
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required />
+  
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+    <!-- ------newsletter----- -->
+
+    <section id="newsletter" class="section-p1 section-m1">
+      <div class="newstext">
+        <h4>Sign Up For Newsletters</h4>
+        <p>
+          Get E-mail Updates about Our latest Collections and
+          <span>Special Offers.</span>
+        </p>
+      </div>
+      <div class="form">
+        <input type="text" />
+        <button class="button1" class="signup-btn" id="signup-btn">
+          Sign Up
+        </button>
+      </div>
+    </section>
+    <footer class="section-p1">
+      <div class="col">
+        <img src="images/logo.png" alt="" class="b-logo" />
+        <h4>Contact</h4>
+        <p>
+          <strong>Address:</strong>507/B Renuka Nagar Kandivali West Mumbai-67
+        </p>
+        <p><strong>Phone:</strong>+91932122XXXX/022-8888-4444</p>
+        <p><strong>Hours:</strong>10:00 -18:00. Mon-Fri</p>
+        <div class="follow">
+          <h4>Follow us</h4>
+          <div class="logos">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-pinterest"></i>
+            <i class="fa-brands fa-twitter"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <h4>About</h4>
+        <a href="#">About Us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Private Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="col">
+        <h4>My Accounts</h4>
+        <a href="#">Sign In</a>
+        <a href="#">View Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Track My Order</a>
+        <a href="#">Help</a>
+      </div>
+
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>From AppStore or GooglePlay</p>
+        <div class="row">
+          <button class="black">
+            <i class="fa-brands fa-apple"></i> Download
+          </button>
+          <button class="black">
+            <i class="fa-brands fa-google-play"></i> Download
+          </button>
+        </div>
+        <p>Secure Payment Gateways</p>
+        <div class="plogos">
+          <i class="fa-brands fa-cc-visa"></i>
+          <i class="fa-brands fa-cc-mastercard"></i>
+          <i class="fa-brands fa-cc-paypal"></i>
+          <i class="fa-brands fa-google-pay"></i>
+          <i class="fa-brands fa-cc-apple-pay"></i>
+          <i class="fa-brands fa-cc-stripe"></i>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>@Dev Gupta - HTML CSS Ecommerce Template</p>
+      </div>
+    </footer>
+    
+
+
+    
+
+
+    <script src="shop.js"></script>
+  </body>
+</html>

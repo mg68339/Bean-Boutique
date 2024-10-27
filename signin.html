@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEAN BOUTIQUE COFFEE SHOP</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="C:\Users\suraj\Desktop\FE\Bean Boutique Coffee Shop logo (1).png">
+    <!-- Favicon -->
+
+   <!-- Style CSS link --> 
+   <link rel="stylesheet" href="./signin.css">
+   <!-- Style CSS link -->
+
+   <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- FontAwesome CDN -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="header">
+            <div class="text">Login</div>
+            <div class="underline"></div>
+        </div>
+        <form id="authForm">
+            <div class="inputs">
+                <!-- Email Input -->
+                <div class="input">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="Email Id" id="email" required/>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password" id="password" required/>
+                </div>
+            </div>
+
+            <!-- Forgot Password Section -->
+            <div class="forgot-password">
+                Forget Password?<span>Click Here</span>
+            </div>
+
+            <!-- Sign-up Toggle Text -->
+            <div class="Signuptxt">New here?<span onclick="toggleForm('Sign Up')">SignUp!</span></div>
+
+            <!-- Submit Button -->
+            <div class="submit-container">
+                <div class="submit" onclick="submitForm()">Submit</div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let currentAction = 'Login';
+
+        function toggleForm(action) {
+            currentAction = action;
+            const headerText = document.querySelector('.text');
+            const submitButton = document.querySelector('.submit');
+            const signupText = document.querySelector('.Signuptxt');
+            const forgotPassword = document.querySelector('.forgot-password');
+            const inputs = document.querySelector('.inputs');
+
+            if (action === 'Sign Up') {
+                headerText.textContent = 'Sign Up';
+                submitButton.classList.add('gray');
+                signupText.innerHTML = 'Already a User?<span onclick="toggleForm(\'Login\')">Login!</span>';
+                forgotPassword.style.display = 'none';
+
+                const nameInput = document.createElement('div');
+                nameInput.classList.add('input');
+                nameInput.innerHTML = `<i class="fa-solid fa-phone"></i><input type="number" placeholder="Phone number" id="phone-number" required/>`;
+                inputs.insertBefore(nameInput, inputs.firstChild);
+            } else {
+                headerText.textContent = 'Login';
+                submitButton.classList.remove('gray');
+                signupText.innerHTML = 'New here?<span onclick="toggleForm(\'Sign Up\')">SignUp!</span>';
+                forgotPassword.style.display = 'block';
+
+                const nameInput = inputs.querySelector('.input:first-child');
+                if (nameInput) {
+                    inputs.removeChild(nameInput);
+                }
+            }
+        }
+
+        function submitForm() {
+            // Get form inputs
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const numInput = document.getElementById('phone-number') ? document.getElementById('phone-number').value.trim() : null;
+
+            // Check for required fields based on the form mode
+            if (currentAction === 'Sign Up' && (!numInput || numInput === '')) {
+                alert('Please enter your phone-number.');
+                return;
+            }
+
+            if (!email) {
+                alert('Please enter your email.');
+                return;
+            }
+
+            if (!password) {
+                alert('Please enter your password.');
+                return;
+            }
+
+            // If all fields are valid, redirect to index.html
+            if (currentAction === 'Sign Up') {
+                alert('Sign Up Successful!');
+            } else {
+                alert('Login Successful!');
+            }
+
+            // Redirect to index.html after successful form submission
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>

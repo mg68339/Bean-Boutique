@@ -1,0 +1,154 @@
+*{
+    background-color: #F8F4E1;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 10px;
+    width: 600px;
+    padding-bottom: 30px;
+    /* background: #AF8F6F; */
+    border: #AF8F6F solid;
+    border-radius: 5PX;
+
+}
+
+.header{
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 9px;
+width: 100%;
+margin-top: 30px;
+}
+.text{
+    color: #74512D;
+    font-size: 46px;
+    font-weight: 700;
+
+}
+.underline{
+    width: 61px;
+    height: 6px;
+    background: #74512D;
+    border-radius: 9px;
+}
+.inputs{
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input{
+    display: flex;
+   
+    margin: auto;
+    width: 480px;
+    height: 80px;
+    background: #eaeaea;
+    border-radius: 9px;
+
+}
+.input i{
+    margin: 30px 30px;
+    font-size: 20px;
+}
+
+.input input{
+    height: 75px;
+    width: 400px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #797979;
+    font-size: 19px;
+}
+
+.forgot-password{
+    padding-left: 62px;
+    margin-top: 27px;
+    color:#797979;
+    font-size: 18px;
+}
+.forgot-password span{
+    color:  #4c00b4;
+    cursor: pointer;
+}
+
+.Signuptxt{
+    padding-left: 62px;
+    margin-top: 27px;
+    color:#797979;
+    font-size: 18px;
+
+}
+.Logintxt span{
+    color:  #4c00b4;
+    cursor: pointer;
+}
+
+.Logintxt span{
+    color:  #4c00b4;
+    cursor: pointer;
+}
+.Logintxt{
+    padding-left: 62px;
+    margin-top: 27px;
+    color:#797979;
+    font-size: 18px;
+
+}
+.Signuptxt span{
+    color:  #4c00b4;
+    cursor: pointer;
+}
+
+.Signuptxt span:hover{
+    color:  #6600f5;
+    cursor: pointer;
+}
+
+.submit-container{
+    display: flex;
+    gap: 30px;
+    margin: 60px auto;
+    align-items: center;
+    justify-content: center;
+
+}
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 59px;
+    color: #fff;
+    background: #74512D;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.submit:hover{
+    background: #543310;
+
+}
+
+.gray{
+    background: #74512D;
+    color: #ffffff;
+}
+
+.gray:hover{
+    background: #543310;
+    color: #ffffff;
+
+}
+
+.linkk{
+    text-decoration: none;
+}
